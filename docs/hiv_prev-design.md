@@ -66,7 +66,7 @@ The DHIS2 HIV Prevention configuration is structured in three major components:
 
 These modular components are designed based on the heterogeneous nature of HIV data systems in countries and support the typical architecture for implementing case-based data systems alongside integrated national HMIS infrastructure:
 
-![HIV illustrative architecture](/resources/images/hiv_architecture_simple.jpg)
+![HIV illustrative architecture](resources/images/hiv_architecture_simple.png)
 
 ### User groups
 
@@ -82,7 +82,7 @@ These modular components are designed based on the heterogeneous nature of HIV d
 
 The tracker program structure is as follows:
 
-![Prevention Tracker Program Structure](/resources/images/prevention_program_structure.jpg)
+![Prevention Tracker Program Structure](resources/images/Overview_of_stage_and_sections.png)
 
 | **Stage**           | **Description**                                              |
 | ------------------- | ------------------------------------------------------------ |
@@ -100,7 +100,7 @@ It is assumed that the HIV prevention workflow begins by enrolling any person id
 
 When a person is enrolled in the HIV Prevention program as a Tracked Entity Instance (TEI), Tracked Entity Attributes (TEA) are recorded to form the case profile. All TEAs are aligned and harmonised with those included in the HIV Case surveillance tracker allowing for enrollment in both programs or for integration into a single tracker program if desired at the local implementation level. Note that several TEAs are shared across non-HIV DHIS2 Tracker programs; these are configured with a prefix ‘GEN’ (general) to indicate they are shared between tracker programs. Check out the [Common Metadata Library](https://docs.dhis2.org/en/topics/metadata/dhis2-who-digital-health-data-toolkit/common-metadata-library/design.html) for more information on shared tracker metadata.
 
-The TEA **program UID** attribute refers to an HIV program specific identifier. It has been kept intentionally blank as coding processes are dependent on local context. Refer to the [DHIS2 User Documentation on configuring system-wide unique identifiers as DHIS2 TEAs]([https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/configuring-the-system/programs.html#create_tracked_entity_attribute:~:text=Select%20Unique%20to,same%20organisation%20unit](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/configuring-the-system/programs.html#create_tracked_entity_attribute:~:text=Select Unique to,same organisation unit).). The use of anonymous UID codes allows individuals accessing HIV prevention services to be uniquely identified and followed longitudinally, without the collection of other types of personally identifying information (WHO, 2022).
+The TEA **program UID** attribute refers to an HIV program specific identifier. It has been kept intentionally blank as coding processes are dependent on local context. Refer to the [DHIS2 User Documentation on configuring system-wide unique identifiers as DHIS2 TEAs](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-238/configuring-the-system/programs.html#configure_tracked_entity). The use of anonymous UID codes allows individuals accessing HIV prevention services to be uniquely identified and followed longitudinally, without the collection of other types of personally identifying information (WHO, 2022).
 
 The **date of birth and age** can be assigned in two different ways:
 
@@ -119,7 +119,7 @@ The data acquired at this stage pertains to the identification of clients belong
 
 Key population data is collected as a program stage in order to further protect the sensitive nature of this data. Specifically, by including this data only in the program stage, it is not accessible for searching a TEI – where users may have broader access to search for clients.
 
-![Key Population Groups](resources/images/key_population_group)
+![Key Population Groups](resources/images/key_population_group.png)
 
 In some implementations, instead of having the different key population groups listed as selectable categories, a set of questions has been proposed and according to the answer a key population identification is assigned to the clients. [See the section Implementation Considerations & Local Adaptation in this document](https://docs.google.com/document/d/1h7KBCLA99jVoTmDTBttIiSk4SKKD7tcIw7yq5A3yH68/edit#heading=h.7690t3h1dai8).
 
@@ -388,7 +388,9 @@ Program indicators are organized into two program indicator groups:
 - ‘HIV Prevention - Data Exchange’ [C2IoD2V2uwS] contains all PIs that are mapped to a corresponding target aggregate data elements for analysis. 
 - ‘HIV Prevention - WHO standard list’ [anCMZxE3c77] contains all PIs that are part of the WHO standard list of indicators (each PI typically represents a numerator or denominator from the SI guidelines standard list)
 
-**Warning**": The majority of Program indicators are EVENT-based and use CUSTOM period boundaries requiring some adaptation. We have provided accurate representations of the program indicators based on the generic data model; however, It is the responsibility of the implementing organization to decide what type of organisation unit dimension to assign to each program indicator, according to national guidelines and in consultation with end users. Please review the section on local adaptation and implementation considerations for more information on how to adjust program indicators and calculations during localization and country adaptation.
+**Warning**
+
+The majority of Program indicators are EVENT-based and use CUSTOM period boundaries requiring some adaptation. We have provided accurate representations of the program indicators based on the generic data model; however, It is the responsibility of the implementing organization to decide what type of organisation unit dimension to assign to each program indicator, according to national guidelines and in consultation with end users. Please review the section on local adaptation and implementation considerations for more information on how to adjust program indicators and calculations during localization and country adaptation.
 
 #### Key population filter in program indicators
 
@@ -487,7 +489,7 @@ See [DHIS2 Developer documentation on the DHIS2 APIs for aggregate data exchange
 
 The metadata has been aligned to the data dictionaries and indicator references published in the WHO’s Digital adaptation kit (DAK) for HIV, second edition (see Web Annex A of the digital adaptation kit for the data dictionary). Note that the Tracker not designed to support all aspects of clinical care guidelines and case management, some of which is contained in the HIV DAK, nor to replace robust facility EMRs; however, data from EMRs can be consumed into the national HIV registry for analysis and use.
 
-You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data dictionary in this resource file.
+You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data dictionary in [this resource file](resources/files/Data Exchange mapping.xlsx).
 
 ## Implementation Considerations & Local Adaptation
 
