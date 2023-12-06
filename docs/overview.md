@@ -14,4 +14,4 @@
 
 ## Metadata Reference
 
-[Version 1.0.0](https://packages.dhis2.org/en/HIV_PREV/1.0.0/DHIS2.40/HIV_CS_COMPLETE_1.0.0_DHIS2.40.xlsx)
+[Version 1.0.0](https://packages.dhis2.org/en/HIV_PREV/1.0.0/DHIS2.40/HIV_PREV_COMPLETE_1.0.0_DHIS2.40.xlsx)
