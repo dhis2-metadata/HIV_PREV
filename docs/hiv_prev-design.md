@@ -1,6 +1,4 @@
-# HIV Prevention Design
-
-Version 1.0.0
+# HIV Prevention Design {#hiv-prev-design}
 
 ## Introduction
 
