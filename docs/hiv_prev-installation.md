@@ -1,14 +1,10 @@
-# HIV Prevention Installation Guide { #hiv-prev-installation }
+# HIV Prevention Tracker Installation Guide { #hiv-prev-installation }
 
 Package Version 1.0.0
 
-## Overview
+System default language: English
 
-The HIV Prevention tracker package was done in order to support some of the latest features in DHIS2. In order to use the package, it is recommended that you install it into a DHIS2 instance using DHIS2 2.33.5 or above. If you will be setting this up on a new instance, please refer to the [DHIS2 installation guide](https://docs.dhis2.org/master/en/dhis2_system_administration_guide/installation.html). This document covers the installation of the following packages:
-
-1. HIV Prevention tracker program
-
-You will have to follow the instructions to ensure that the package is installed and configured correctly.
+Available translations: 
 
 ## Installation
 
@@ -19,7 +15,13 @@ Installation of the module consists of several steps:
 3. [Configuring](#additional-configuration) the imported metadata.
 4. [Adapting](#adapting-the-tracker-program) the program after being imported
 
-It is recommended to first read through each section before starting the installation and configuration process in DHIS2. Sections that are not applicable have been identified, depending on if you are importing into a new instance of DHIS2 or a DHIS2 instance with metadata already present. The procedure outlined in this document should be tested in a test/staging environment before either being repeated or transferred to a production instance of DHIS2.
+It is recommended to first read through each section of the installation guide before starting the installation and configuration process in DHIS2. Identify applicable sections depending on the type of your import:
+
+1. Import into a blank DHIS2 instance
+2. Import into a DHIS2 instance with existing metadata (No other versions of HIV Prevention tracker imported previously).
+3. Update existing/older version of the HIV Prevention tracker.
+
+The steps outlined in this document should be tested in a test/staging DHIS2 instance and only then applied to a production environment.
 
 ## Requirements
 
@@ -71,6 +73,18 @@ Like indicator types, you may have already existing tracked entity types in your
 Visualizations, event reports, report tables and maps that are assigned to a specific organisation unit level or organisation unit group, have a reference to the root (level 1) organisation unit. Such objects, if present in the metadata file, contain a placeholder `<OU_ROOT_UID>`. Use the search function in the .json file editor to possibly identify this placeholder and replace it with the UID of the level 1 organisation unit in the target instance.
 
 Some visualizations and maps may contain references to organisation unit levels. Maps that consist of several map views may contain various Organisation unit level references based on the configuration of the map layer. Adjust the organisation unit level references in the metadata json file to match the organisation unit structure in the target instance before importing the metadata file.
+
+### Upgrading metadata package
+
+The process of upgrading an existing package to a newer version in a working DHIS2 instance is a complex operation that has to be taken with precaution. Such process has to be run in a staging instance first, before upgrading the configuration on the production server. As metadata objects may have been removed, added or changed, it is important to ensure that:
+
+   - the format of existing data can be mapped and adjusted to the new configuration;
+   - the discontinued metadata objects are deleted from the instance; 
+   - The existing objects are updated;
+   - the new objects are created;
+   - assignment of users to relevant user groups is reviewed.
+
+The [diff file](resources/tb_cs-1.0.1-vs-2.0.0.xlsx) will help the implementer identify the necessary changes.
 
 ## Importing metadata
 
@@ -148,20 +162,18 @@ You must assign the program to organisation units within your own hierarchy in o
 
 ### Duplicated metadata
 
-**NOTE:** This section only applies if you are importing into a DHIS2 database in which there is already meta-data present. If you are working with a new DHIS2 instance, you may skip this section.
+> **NOTE**
+>
+> This section only applies if you are importing into a DHIS2 database in which there is already meta-data present. If you are working with a new DHIS2 instance, please skip this section and go to [Adapting the tracker program](#adapting-the-tracker-program).
+> If you are using any third party applications that rely on the current metadata, please take into account that this update could break them”
 
 Even when metadata has been successfully imported without any import conflicts, there can be duplicates in the metadata - data elements, tracked entity attributes or option sets that already exist. As was noted in the section above on resolving conflict, an important issue to keep in mind is that decisions on making changes to the metadata in DHIS2 also needs to take into account other documents and resources that are in different ways associated with both the existing metadata, and the metadata that has been imported through the configuration package. Resolving duplicates is thus not only a matter of "cleaning up the database", but also making sure that this is done without, for example, breaking potential integrating with other systems, the possibility to use training material, breaking SOPs etc. This will very much be context-dependent.
-
-One important thing to keep in mind is that DHIS2 has tools that can hide some of the complexities of potential duplications in metadata. For example, where duplicate option sets exist, they can be hidden for groups of users through [sharing](https://docs.dhis2.org/master/en/user/html/sharing.html).
 
 #### Data entry forms
 
 * After registering the first (test) case, access the **Settings** menu in the tracker capture form and select **Show/Hide Widgets**
 * Switch from **Timeline Data Entry** to **Tabular Data Entry**
 * Make sure that **Enrollment**, **Feedback** and **Profile** widgets are selected. Click **Close**.
-* Adjust the widgets on the screen as shown below:
-
-Screenshot
 
 #### Top Bar
 
