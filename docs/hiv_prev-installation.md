@@ -4,8 +4,6 @@ Package Version 1.0.0
 
 System default language: English
 
-Available translations: 
-
 ## Installation
 
 Installation of the module consists of several steps:
@@ -179,13 +177,13 @@ Even when metadata has been successfully imported without any import conflicts, 
 * Select **Activate top bar**
 * Select required information fields and assign their **Sort order**
 
-|| Recommended fields | Sort order |
-|---|---|
-| Surname | 1 |
-| Date of birth | 2 |
-| This person is in viral supression | 3 |
-| Viral load latest | 4 |
-| Days without medicine | 5 |
+| Recommended fields                 | Sort order |
+|------------------------------------|------------|
+| Surname                            | 1          |
+| Date of birth                      | 2          |
+| This person is in viral supression | 3          |
+| Viral load latest                  | 4          |
+| Days without medicine              | 5          |
 
 * Click **Save**
 * Return to the **Settings** menu. Click **Saved dashboard layout as default**. Lock layout for all users.
