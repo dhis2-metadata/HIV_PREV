@@ -66,14 +66,6 @@ These modular components are designed based on the heterogeneous nature of HIV d
 
 ![HIV illustrative architecture](resources/images/hiv_architecture_simple.png)
 
-### User groups
-
-| User group              | Metadata          | Data                 |
-| ----------------------- | ----------------- | -------------------- |
-| HIV PREV - Admin        | Can edit and view | No Access            |
-| HIV PREV - Access       | Can view only     | Can view only        |
-| HIV PREV - Data capture | Can view only     | Can capture and view |
-
 ## Tracker
 
 ### Tracker Program Structure
@@ -488,6 +480,14 @@ See [DHIS2 Developer documentation on the DHIS2 APIs for aggregate data exchange
 The metadata has been aligned to the data dictionaries and indicator references published in the WHO’s Digital adaptation kit (DAK) for HIV, second edition (see Web Annex A of the digital adaptation kit for the data dictionary). Note that the Tracker not designed to support all aspects of clinical care guidelines and case management, some of which is contained in the HIV DAK, nor to replace robust facility EMRs; however, data from EMRs can be consumed into the national HIV registry for analysis and use.
 
 You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data dictionary in ![this resource file](resources/files/Data_Exchange_mapping.xlsx)
+
+### User groups
+
+| User group              | Metadata          | Data                 |
+| ----------------------- | ----------------- | -------------------- |
+| HIV PREV - Admin        | Can edit and view | No Access            |
+| HIV PREV - Access       | Can view only     | Can view only        |
+| HIV PREV - Data capture | Can view only     | Can capture and view |
 
 ## Implementation Considerations & Local Adaptation
 
