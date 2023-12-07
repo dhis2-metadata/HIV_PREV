@@ -7,6 +7,7 @@
 ## Design
 
 [Version 1.0.0](#hiv-prev-design)
+[HIV Prevention Dashboards and Datasets](#hiv-prev-dashboards-datasets)
 
 ## Installation
 
