@@ -1,7 +1,5 @@
 # HIV Prevention Design
 
-Version 1.0.0
-
 ## Introduction
 
 The prevention component of the **DHIS2 Toolkit for HIV** is based on the latest WHO Consolidated guidelines on person-centred HIV strategic information: strengthening routine data for impact [https://www.who.int/publications/i/item/9789240055315](https://www.who.int/publications/i/item/9789240055315) (2022) and the Digital adaptation kit for HIV: operational requirements for implementing WHO recommendations and standards within digital systems, second edition.
