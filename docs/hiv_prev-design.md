@@ -68,14 +68,6 @@ These modular components are designed based on the heterogeneous nature of HIV d
 
 ![HIV illustrative architecture](resources/images/hiv_architecture_simple.png)
 
-### User groups
-
-| User group              | Metadata          | Data                 |
-| ----------------------- | ----------------- | -------------------- |
-| HIV PREV - Admin        | Can edit and view | No Access            |
-| HIV PREV - Access       | Can view only     | Can view only        |
-| HIV PREV - Data capture | Can view only     | Can capture and view |
-
 ## Tracker
 
 ### Tracker Program Structure
@@ -111,7 +103,9 @@ Once done, a 'probable' age of birth is assigned to the Date of birth based on t
 
 ![Date of Birth](/resources/images/Data_of_birth_unknown.gif)
 
-**Note:** The date of birth is configured as mandatory; it must always have a value because it is used in the calculation of all program indicators involving age groups
+>**Note:** 
+>
+>The date of birth is configured as mandatory; it must always have a value because it is used in the calculation of all program indicators involving age groups
 
 ### Stage 1: Initial case report (non-repeatable)
 
@@ -147,7 +141,9 @@ The data element representing VMMC services will only show for persons enrolled 
 
 ![Select prevention activities for the visit](resources/images/visit_sections_selections.gif)
 
-**Note:** Hiding a section does not erase the data that are recorded there and all the program indicators are NOT filtered by the selection or not of the section. In case there are any data that has been mistakenly entered, they will need to be removed manually one by one and not simply de-selecting the section
+>**Note:**
+>
+>Hiding a section does not erase the data that are recorded there and all the program indicators are NOT filtered by the selection or not of the section. In case there are any data that has been mistakenly entered, they will need to be removed manually one by one and not simply de-selecting the section
 
 #### Risk assessment
 
@@ -245,7 +241,7 @@ All the Data Elements mentioned hereunder are “hidden” and therefore not vis
 
 Here we provide an overview of all the “hidden” data elements which are contained in the repeatable Visit stage, where program rules are used to assign a value. In many cases, the program rule simply assigns a value from a previous program stage (such as Initial Report) in order to allow the program indicators to calculate correctly.
 
-#### Assigning key population data element value to Visit Stage
+**Assigning key population data element value to Visit Stage**
 
 Program rules are used to copy and assign the value of the TEI’s key population group recorded in the initial case report to a hidden data element field on the repeatable ‘Visit’ program stage. This allows for all calculations and disaggregations based on key population group to be configured namely by using the autoassigned data element as a filter in the program indicator.
 
@@ -388,9 +384,9 @@ Program indicators are organized into two program indicator groups:
 - ‘HIV Prevention - Data Exchange’ [C2IoD2V2uwS] contains all PIs that are mapped to a corresponding target aggregate data elements for analysis. 
 - ‘HIV Prevention - WHO standard list’ [anCMZxE3c77] contains all PIs that are part of the WHO standard list of indicators (each PI typically represents a numerator or denominator from the SI guidelines standard list)
 
-**Warning**
-
-The majority of Program indicators are EVENT-based and use CUSTOM period boundaries requiring some adaptation. We have provided accurate representations of the program indicators based on the generic data model; however, It is the responsibility of the implementing organization to decide what type of organisation unit dimension to assign to each program indicator, according to national guidelines and in consultation with end users. Please review the section on local adaptation and implementation considerations for more information on how to adjust program indicators and calculations during localization and country adaptation.
+>**Warning**
+>
+>The majority of Program indicators are EVENT-based and use CUSTOM period boundaries requiring some adaptation. We have provided accurate representations of the program indicators based on the generic data model; however, It is the responsibility of the implementing organization to decide what type of organisation unit dimension to assign to each program indicator, according to national guidelines and in consultation with end users. Please review the section on local adaptation and implementation considerations for more information on how to adjust program indicators and calculations during localization and country adaptation.
 
 #### Key population filter in program indicators
 
@@ -491,6 +487,14 @@ The metadata has been aligned to the data dictionaries and indicator references 
 
 You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data dictionary in [this resource file](resources/files/Data_Exchange_mapping.xlsx)
 
+## User Groups
+
+| User group            | Metadata          | Data                 |
+|-----------------------|-------------------|----------------------|
+| HIV PREV - Admin        | Can edit and view | No Access            |
+| HIV PREV - Access       | Can view only     | Can view only        |
+| HIV PREV - Data capture | Can view only     | Can capture and view |
+
 ## Implementation Considerations & Local Adaptation
 
 This chapter describes some of the possibilities for adapting the configuration for local context and needs, as well as implementation considerations that are important for the HIV prevention use case.
@@ -540,7 +544,9 @@ Program indicators can define which **organisation unit dimension** to be used i
 
 More detailed guidance about Ownership Analytics can be found in the [Tracker Design Guide](https://docs.dhis2.org/en/implement/database-design/tracker-system-design/tracker-analytics.html#common-challenge-3-transfers-and-ownership).
 
-**Note:** for implementations using DHIS2 software version 2.39 or lower, program indicators generated at any level below national will not reflect the current ‘ownership’ org unit. This means that if a TEI (person) who has been permanently transferred from one organisation unit (Health Facility A) to another (Health Facility B) for a given Tracker program enrollment *will still be counted as belonging to Health Facility A* for the purposes of program indicators. In practical terms, this means that when a patient has moved between sites, all longitudinal indicators for this patient are not re-assigned to the patient’s latest site, and remain assigned to the initial site where the patient first entered the program. This is a critical limitation for typical HIV use cases, where site level performance metrics such as lost-to-follow-up must be generated accurately at a subnational or facility level. If your implementation uses DHIS2 v2.39 or lower, please review your configuration carefully to see if you have accounted for the exclusion of persons ‘transferred out’ based on the org unit enrollment ownership.
+>**Note:**
+>
+>for implementations using DHIS2 software version 2.39 or lower, program indicators generated at any level below national will not reflect the current ‘ownership’ org unit. This means that if a TEI (person) who has been permanently transferred from one organisation unit (Health Facility A) to another (Health Facility B) for a given Tracker program enrollment *will still be counted as belonging to Health Facility A* for the purposes of program indicators. In practical terms, this means that when a patient has moved between sites, all longitudinal indicators for this patient are not re-assigned to the patient’s latest site, and remain assigned to the initial site where the patient first entered the program. This is a critical limitation for typical HIV use cases, where site level performance metrics such as lost-to-follow-up must be generated accurately at a subnational or facility level. If your implementation uses DHIS2 v2.39 or lower, please review your configuration carefully to see if you have accounted for the exclusion of persons ‘transferred out’ based on the org unit enrollment ownership.
 
 #### Event date vs Custom date
 
