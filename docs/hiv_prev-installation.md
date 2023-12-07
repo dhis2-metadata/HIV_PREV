@@ -12,7 +12,7 @@ Installation of the module consists of several steps:
 
 1. [Preparing](#preparing-the-metadata-file) the metadata file.
 2. [Importing](#importing-metadata) the metadata file into DHIS2.
-3. [Configuring](#additional-configuration) the imported metadata.
+3. [Configuring](#configuration) the imported metadata.
 4. [Adapting](#adapting-the-tracker-program) the program after being imported
 
 It is recommended to first read through each section of the installation guide before starting the installation and configuration process in DHIS2. Identify applicable sections depending on the type of your import:
@@ -41,12 +41,12 @@ In early versions of DHIS2, the UID of the default data dimension was auto-gener
 
 To avoid conflicts when importing the metadata, it is advisable to search and replace the entire .json file for all occurrences of these default objects, replacing UIDs of the .json file with the UIDs of the database in which the file will be imported. Table 1 shows the UIDs which should be replaced, as well as the API endpoints to identify the existing UIDs.
 
-|Object|UID|API endpoint|
-|:--|:--|:--|
-|Category|GLevLNI9wkl|`../api/categories.json?filter=name:eq:default`|
-|Category option|xYerKDKCefk|`../api/categoryOptions.json?filter=name:eq:default`|
-|Category combination|bjDvmb4bfuf|`../api/categoryCombos.json?filter=name:eq:default`|
-|Category option combination|HllvX50cXC0|`../api/categoryOptionCombos.json?filter=name:eq:default`|
+| Object                      | UID         | API endpoint                                              |
+|:----------------------------|:------------|:----------------------------------------------------------|
+| Category                    | GLevLNI9wkl | `../api/categories.json?filter=name:eq:default`           |
+| Category option             | xYerKDKCefk | `../api/categoryOptions.json?filter=name:eq:default`      |
+| Category combination        | bjDvmb4bfuf | `../api/categoryCombos.json?filter=name:eq:default`       |
+| Category option combination | HllvX50cXC0 | `../api/categoryOptionCombos.json?filter=name:eq:default` |
 
 For example, if importing a configuration package into <https://play.dhis2.org/demo>, the UID of the default category option combination could be identified through <https://play.dhis2.org/demo/api/categoryOptionCombos.json?filter=name:eq:default> as bRowv6yZOF2.
 
@@ -56,17 +56,17 @@ You could then search and replace all occurrences of HllvX50cXC0 with bRowv6yZOF
 
 Indicator type is another type of object that can create import conflict because certain names are used in different DHIS2 databases (.e.g "Percentage"). Since Indicator types are defined simply by their factor and whether or not they are simple numbers without a denominator, they are unambiguous and can be replaced through a search and replace of the UIDs. This avoids potential import conflicts, and avoids creating duplicate indicator types. Table 2 shows the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs
 
-|Object|UID|API endpoint|
-|:--|:--|:--|
-|Percentage|hmSnCXmLYwt|`../api/indicatorTypes.json?filter=number:eq:false&filter=factor:eq:100`|
+| Object     | UID         | API endpoint                                                             |
+|:-----------|:------------|:-------------------------------------------------------------------------|
+| Percentage | hmSnCXmLYwt | `../api/indicatorTypes.json?filter=number:eq:false&filter=factor:eq:100` |
 
 ### Tracked Entity Type
 
 Like indicator types, you may have already existing tracked entity types in your DHIS2 database. The references to the tracked entity type should be changed to reflect what is in your system so you do not create duplicates. Table 3 shows the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs
 
-|Object|UID|API endpoint|
-|:--|:--|:--|
-|Person|MCPQUTHX1Ze|`../api/trackedEntityTypes.json?filter=name:eq:Person`|
+| Object | UID         | API endpoint                                           |
+|:-------|:------------|:-------------------------------------------------------|
+| Person | MCPQUTHX1Ze | `../api/trackedEntityTypes.json?filter=name:eq:Person` |
 
 ### Visualizations using Root Organisation Unit UID
 
@@ -84,17 +84,15 @@ The process of upgrading an existing package to a newer version in a working DHI
    - the new objects are created;
    - assignment of users to relevant user groups is reviewed.
 
-The [diff file](resources/tb_cs-1.0.1-vs-2.0.0.xlsx) will help the implementer identify the necessary changes.
-
 ## Importing metadata
 
 The .json metadata file is imported through the [Import/Export](https://docs.dhis2.org/master/en/user/html/import_export.html) app of DHIS2. It is advisable to use the "dry run" feature to identify issues before attempting to do an actual import of the metadata. If "dry run" reports any issues or conflicts, see the [import conflicts](#handling-import-conflicts) section below.
 
-If the "dry run"/"validate" import works without error, attempt to import the metadata. If the import succeeds without any errors, you can proceed to [configure](#additional-configuration) the module. In some cases, import conflicts or issues are not shown during the "dry run", but appear when the actual import is attempted. In this case, the import summary will list any errors that need to be resolved.
+If the "dry run"/"validate" import works without error, attempt to import the metadata. If the import succeeds without any errors, you can proceed to [configure](#configuration) the module. In some cases, import conflicts or issues are not shown during the "dry run", but appear when the actual import is attempted. In this case, the import summary will list any errors that need to be resolved.
 
 ### Handling import conflicts
 
-NOTE: If you are importing into a new DHIS2 instance, you will not have to worry about import conflicts, as there is nothing in the database you are importing to to conflict with. Follow the instructions to import the metadata then please proceed to the [“Additional configuration”](#additional-configuration) section.
+NOTE: If you are importing into a new DHIS2 instance, you will not have to worry about import conflicts, as there is nothing in the database you are importing to conflict with. Follow the instructions to import the metadata then please proceed to the “[Configuration](#configuration)” section.
 
 There are a number of different conflicts that may occur, though the most common is that there are metadata objects in the configuration package with a name, shortname and/or code that already exists in the target database. There are a couple of alternative solutions to these problems, with different advantages and disadvantages. Which one is more appropriate will depend, for example, on the type of object for which a conflict occurs.
 
@@ -135,11 +133,11 @@ A metadata package usually contains several user groups:
 * HIV PREV - Admin
 * HIV PREV - Data capture
 
-By default the following is assigned to these user groups
+By default, the following is assigned to these user groups
 
-| Object              | User Groups                        |                                             |                                                |
-|---------------------|------------------------------------|---------------------------------------------|------------------------------------------------|
-|                     | HIV PREV - Access                        | HIV PREV - Admin                                | HIV PREV - Data capture                              |
+| Object              | User Groups                             |                                                  |                                                     |
+|---------------------|-----------------------------------------|--------------------------------------------------|-----------------------------------------------------|
+|                     | HIV PREV - Access                       | HIV PREV - Admin                                 | HIV PREV - Data capture                             |
 | Tracked entity type | Metadata : can view <br> Data: can view | Metadata : can edit and view <br> Data: can view | Metadata : can view <br> Data: can capture and view |
 | Program             | Metadata : can view <br> Data: can view | Metadata : can edit and view <br> Data: can view | Metadata : can view <br> Data: can capture and view |
 | Program Stages      | Metadata : can view <br> Data: can view | Metadata : can edit and view <br> Data: can view | Metadata : can view <br> Data: can capture and view |
