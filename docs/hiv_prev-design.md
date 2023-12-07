@@ -495,6 +495,14 @@ You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data 
 | HIV PREV - Access       | Can view only     | Can view only        |
 | HIV PREV - Data capture | Can view only     | Can capture and view |
 
+### User groups
+
+| User group              | Metadata          | Data                 |
+| ----------------------- | ----------------- | -------------------- |
+| HIV PREV - Admin        | Can edit and view | No Access            |
+| HIV PREV - Access       | Can view only     | Can view only        |
+| HIV PREV - Data capture | Can view only     | Can capture and view |
+
 ## Implementation Considerations & Local Adaptation
 
 This chapter describes some of the possibilities for adapting the configuration for local context and needs, as well as implementation considerations that are important for the HIV prevention use case.
