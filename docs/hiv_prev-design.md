@@ -487,7 +487,7 @@ See [DHIS2 Developer documentation on the DHIS2 APIs for aggregate data exchange
 
 The metadata has been aligned to the data dictionaries and indicator references published in the WHO’s Digital adaptation kit (DAK) for HIV, second edition (see Web Annex A of the digital adaptation kit for the data dictionary). Note that the Tracker not designed to support all aspects of clinical care guidelines and case management, some of which is contained in the HIV DAK, nor to replace robust facility EMRs; however, data from EMRs can be consumed into the national HIV registry for analysis and use.
 
-You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data dictionary in ![this resource file](resources/files/Data_Exchange_mapping.xlsx)
+You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data dictionary in [this resource file](resources/files/Data_Exchange_mapping.xlsx)
 
 ## Implementation Considerations & Local Adaptation
 
