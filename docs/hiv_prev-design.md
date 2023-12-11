@@ -101,7 +101,7 @@ The **date of birth and age** can be assigned in two different ways:
 
 Once done, a 'probable' age of birth is assigned to the Date of birth based on the value entered either on the years or month TEA.
 
-![Date of Birth](/resources/images/Data_of_birth_unknown.gif)
+![Date of Birth](resources/images/Data_of_birth_unknown.gif)
 
 >**Note:** 
 >
