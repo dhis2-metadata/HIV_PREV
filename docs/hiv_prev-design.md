@@ -487,6 +487,10 @@ The metadata has been aligned to the data dictionaries and indicator references 
 
 You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data dictionary in [this resource file](resources/files/Data_Exchange_mapping.xlsx)
 
+> **Note**
+>
+> Due to the volume of Program Indicators that need to feed the coorespondent aggregate data model, the Data Exchange is not meant to be used with the app but only scheduled as a backend job
+
 ## User Groups
 
 | User group            | Metadata          | Data                 |
