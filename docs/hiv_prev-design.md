@@ -115,7 +115,7 @@ Key population data is collected as a program stage in order to further protect 
 
 ![Key Population Groups](resources/images/key_population_group.png)
 
-In some implementations, instead of having the different key population groups listed as selectable categories, a set of questions has been proposed and according to the answer a key population identification is assigned to the clients. [See the section Implementation Considerations & Local Adaptation in this document](https://docs.google.com/document/d/1h7KBCLA99jVoTmDTBttIiSk4SKKD7tcIw7yq5A3yH68/edit#heading=h.7690t3h1dai8).
+In some implementations, instead of having the different key population groups listed as selectable categories, a set of questions has been proposed and according to the answer a key population identification is assigned to the clients. *See the section Implementation Considerations & Local Adaptation*.
 
 For an individual enrolled in an HIV prevention program, it is possible that their association with a key population group may change over time, as an individual’s risk of HIV acquisition, participation in high risk behaviours, and HIV prevention needs vary over time. The program stage is intentionally designed as non-repeatable to allow optimized analytics based on the key population group. However, a user may revisit this stage and modify the key population groups as needed. 
 
