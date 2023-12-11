@@ -384,9 +384,9 @@ Program indicators are organized into two program indicator groups:
 - ‘HIV Prevention - Data Exchange’ [C2IoD2V2uwS] contains all PIs that are mapped to a corresponding target aggregate data elements for analysis. 
 - ‘HIV Prevention - WHO standard list’ [anCMZxE3c77] contains all PIs that are part of the WHO standard list of indicators (each PI typically represents a numerator or denominator from the SI guidelines standard list)
 
->**Warning**
+> **Warning**
 >
->The majority of Program indicators are EVENT-based and use CUSTOM period boundaries requiring some adaptation. We have provided accurate representations of the program indicators based on the generic data model; however, It is the responsibility of the implementing organization to decide what type of organisation unit dimension to assign to each program indicator, according to national guidelines and in consultation with end users. Please review the section on local adaptation and implementation considerations for more information on how to adjust program indicators and calculations during localization and country adaptation.
+> The majority of Program indicators are EVENT-based and use CUSTOM period boundaries requiring some adaptation. We have provided accurate representations of the program indicators based on the generic data model; however, It is the responsibility of the implementing organization to decide what type of organisation unit dimension to assign to each program indicator, according to national guidelines and in consultation with end users. Please review the section on local adaptation and implementation considerations for more information on how to adjust program indicators and calculations during localization and country adaptation.
 
 #### Key population filter in program indicators
 
@@ -447,7 +447,7 @@ The denominator definition states that the program indicator should count the �
 
 The numerator states that the program indicator should count the “Number of people in the cohort retained in OAMT for at least six months”. This is configured as a count of ENROLLMENTS, where the assigned value to the hidden data element ‘HIV - OAMT: Cumulative days’ [YL74GURXFMz] is greater than or equal to 180/ 
 
-**STI.8**	**Repeat diagnosis of STI syndrom**e
+**STI.8 Repeat diagnosis of STI syndrome**
 
 The reporting period of the indicator has been set-up as the “last 12 months” therefore the output will be the proportion of clients diagnosed with a particular STI syndrome two or more times within the last 12 months.
 
@@ -491,14 +491,6 @@ You can find a detailed mapping between the DHIS2 metadata and the HIV DAK data 
 
 | User group            | Metadata          | Data                 |
 |-----------------------|-------------------|----------------------|
-| HIV PREV - Admin        | Can edit and view | No Access            |
-| HIV PREV - Access       | Can view only     | Can view only        |
-| HIV PREV - Data capture | Can view only     | Can capture and view |
-
-### User groups
-
-| User group              | Metadata          | Data                 |
-| ----------------------- | ----------------- | -------------------- |
 | HIV PREV - Admin        | Can edit and view | No Access            |
 | HIV PREV - Access       | Can view only     | Can view only        |
 | HIV PREV - Data capture | Can view only     | Can capture and view |
