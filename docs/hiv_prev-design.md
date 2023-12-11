@@ -477,7 +477,7 @@ In the numerator we are counting all clients that have received another HIV test
 
 As described above, all the dashboards and indicators are supported by an aggregate data model. This allows for mixed methods of reporting from various electronic and paper-based sources, enabling all data to be brought together for the purpose of analysis and use such as in an integrated HMIS.
 
-Where target aggregate data elements can be populated by aggregating the underlying Tracker data from the HIV Prevention tracker, we have pre-configured a set of program indicators and included the mapping of the target aggregate dimensions (data element UID and Category Option Combination UID).
+Where target aggregate data elements can be populated by aggregating the underlying Tracker data from the HIV Prevention tracker, we have pre-configured a set of program indicators and included the mapping of the target aggregate dimensions (data element CODE and Category Option Combination CODE).
 
 See [DHIS2 User documentation on how to use the Data Exchange App](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-240/exchanging-data/data-exchange.html).
 
