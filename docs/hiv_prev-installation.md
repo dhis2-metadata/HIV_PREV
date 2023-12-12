@@ -52,11 +52,14 @@ You could then search and replace all occurrences of HllvX50cXC0 with bRowv6yZOF
 
 ### Indicator types
 
-Indicator type is another type of object that can create import conflict because certain names are used in different DHIS2 databases (.e.g "Percentage"). Since Indicator types are defined simply by their factor and whether or not they are simple numbers without a denominator, they are unambiguous and can be replaced through a search and replace of the UIDs. This avoids potential import conflicts, and avoids creating duplicate indicator types. Table 2 shows the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs
+Indicator type is another type of object that can create import conflict because certain names are used in different DHIS2 databases (.e.g "Percentage"). Since Indicator types are defined simply by their factor and whether or not they are simple numbers without a denominator, they are unambiguous and can be replaced through a search and replace of the UIDs. This avoids potential import conflicts, and avoids creating duplicate indicator types. The following table shows the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs
 
 | Object     | UID         | API endpoint                                                             |
 |:-----------|:------------|:-------------------------------------------------------------------------|
 | Percentage | hmSnCXmLYwt | `../api/indicatorTypes.json?filter=number:eq:false&filter=factor:eq:100` |
+| Rate (factor=1)| k4RGC3sMTzO | `../api/indicatorTypes.json?filter=number:eq:false&filter=factor:eq:1`|
+| Per 10 000 | FWTvArgP0jt | `../api/indicatorTypes.json?filter=number:eq:false&filter=factor:eq:10000`|
+| Numerator only (number) | kHy61PbChXr | `..api/indicatorTypes.json?filter=number:eq:true`|
 
 ### Tracked Entity Type
 
@@ -90,7 +93,7 @@ If the "dry run"/"validate" import works without error, attempt to import the me
 
 ### Handling import conflicts
 
-NOTE: If you are importing into a new DHIS2 instance, you will not have to worry about import conflicts, as there is nothing in the database you are importing to conflict with. Follow the instructions to import the metadata then please proceed to the “[Configuration](#configuration)” section.
+> NOTE: If you are importing into a new DHIS2 instance, you will not have to worry about import conflicts, as there is nothing in the database you are importing to conflict with. Follow the instructions to import the metadata then please proceed to the “[Configuration](#configuration)” section.
 
 There are a number of different conflicts that may occur, though the most common is that there are metadata objects in the configuration package with a name, shortname and/or code that already exists in the target database. There are a couple of alternative solutions to these problems, with different advantages and disadvantages. Which one is more appropriate will depend, for example, on the type of object for which a conflict occurs.
 
@@ -194,15 +197,9 @@ The following metadata needs to be configured after import.
 
 | Metadata Type       | Name                                               |
 |---------------------|----------------------------------------------------|
-| Option Sets         | [CONFIG]\_Race / Ethnicity / Nationality           |
-| Option Sets         | [CONFIG]\_Occupation                               |
-| Option Sets         | [CONFIG]\_Diagnosis                                |
-| Data Elements       | [CONFIG]\_Month before illness, [Other exposure X] |
-| Data Elements       | [CONFIG]\_Laboratory test X                        |
-| Data Elements       | [CONFIG]\_Date of test X                           |
-| Data Elements       | [CONFIG]\_Pathogens tested "X"                     |
+| Option Sets         | [CONFIG]_HIV - PrEP reason discontinuation         |
+| Option Sets         | [CONFIG]\_HIV - PrEP adverse effect                |
 
-Where you can see X in the name, it means there is currently a number to distinguish every different metadata object. For example, for [CONFIG]\_Laboratory test X, you will find in the package Data Elements called [CONFIG]\_Laboratory test 1, [CONFIG]\_Laboratory test 2, [CONFIG]\_Laboratory test 3. It is entirely up to you to rename them as well as adding new ones or removing the ones you may not need following the same logic.
 **Please be aware that this migh have an impact on Program Indicators and Program Rules.**
 
 ## Adapting the tracker program
