@@ -136,7 +136,7 @@ A metadata package usually contains several user groups:
 
 By default, the following is assigned to these user groups
 
-| Object              | User Groups                             |                                                  |                                                     |
+| Object              | User Groups                             | User Groups                                      |  User Groups                                        |
 |---------------------|-----------------------------------------|--------------------------------------------------|-----------------------------------------------------|
 |                     | HIV PREV - Access                       | HIV PREV - Admin                                 | HIV PREV - Data capture                             |
 | Tracked entity type | Metadata : can view <br> Data: can view | Metadata : can edit and view <br> Data: can view | Metadata : can view <br> Data: can capture and view |
@@ -167,29 +167,6 @@ You must assign the program to organisation units within your own hierarchy in o
 > If you are using any third party applications that rely on the current metadata, please take into account that this update could break them”
 
 Even when metadata has been successfully imported without any import conflicts, there can be duplicates in the metadata - data elements, tracked entity attributes or option sets that already exist. As was noted in the section above on resolving conflict, an important issue to keep in mind is that decisions on making changes to the metadata in DHIS2 also needs to take into account other documents and resources that are in different ways associated with both the existing metadata, and the metadata that has been imported through the configuration package. Resolving duplicates is thus not only a matter of "cleaning up the database", but also making sure that this is done without, for example, breaking potential integrating with other systems, the possibility to use training material, breaking SOPs etc. This will very much be context-dependent.
-
-#### Data entry forms
-
-* After registering the first (test) case, access the **Settings** menu in the tracker capture form and select **Show/Hide Widgets**
-* Switch from **Timeline Data Entry** to **Tabular Data Entry**
-* Make sure that **Enrollment**, **Feedback** and **Profile** widgets are selected. Click **Close**.
-
-#### Top Bar
-
-* Access the **Settings** menu and select **Top bar settings**
-* Select **Activate top bar**
-* Select required information fields and assign their **Sort order**
-
-| Recommended fields                 | Sort order |
-|------------------------------------|------------|
-| Surname                            | 1          |
-| Date of birth                      | 2          |
-| This person is in viral supression | 3          |
-| Viral load latest                  | 4          |
-| Days without medicine              | 5          |
-
-* Click **Save**
-* Return to the **Settings** menu. Click **Saved dashboard layout as default**. Lock layout for all users.
 
 ### [CONFIG] metadata
 
