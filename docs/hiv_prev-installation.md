@@ -136,7 +136,7 @@ A metadata package usually contains several user groups:
 
 By default, the following is assigned to these user groups
 
-| Object              | User Groups                             |                                                  |                                                     |
+| Object              | User Groups                             | User Groups                                      |  User Groups                                        |
 |---------------------|-----------------------------------------|--------------------------------------------------|-----------------------------------------------------|
 |                     | HIV PREV - Access                       | HIV PREV - Admin                                 | HIV PREV - Data capture                             |
 | Tracked entity type | Metadata : can view <br> Data: can view | Metadata : can edit and view <br> Data: can view | Metadata : can view <br> Data: can capture and view |
