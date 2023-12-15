@@ -531,6 +531,8 @@ Tracker metadata that are common between the HIV prevention and HIV case surveil
 - Visit stage:
   - STI data elements are the same
   - Viral hepatitis: Data Elements related to the testing, date and result are the same
+ 
+Implementers need to be mindful of privacy and confidentiality concerns related to patient data being linked from a Prevention tracker to a Case Surveillance Tracker.  Some data elements that carry sensitive patient information, such as a patient's key population status, may need to be removed if a patient record is linked.  Furthermore, linking between Prevention and Case Surveillance Trackers would not be advised if privacy, security and patient confidentiality could not be ensured (see Chapter 2: Prevention and Chapter 6: Digital health data of WHO's 2022 'Consolidated guidelines on person-centred HIV strategic information' for further details).
 
 ![Structure for an integrated Prevention/Case Surveillance Tracker Program](resources/images/integrated_prev_cs_structure.jpg)
 
